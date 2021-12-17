@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:udemy_couese/modules/bmi_result/bmiResultScreen.dart';
+import 'package:udemy_couese/shared/components/components.dart';
 
 class BmiPage extends StatefulWidget {
   const BmiPage({Key key}) : super(key: key);
@@ -246,13 +247,18 @@ class _BmiPageState extends State<BmiPage> {
               onPressed: (){
                   double result=weight/pow(sliderHeight/ 100,2);
                   print(result.round());
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context)=>BmiResultPage(
-                      result: result.roundToDouble(),
-                        isMale: isMale,
-                          age: age,
-                      )
-                      ));
+                  navigateTo(context, BmiResultPage(
+                    result: result.roundToDouble(),
+                    isMale: isMale,
+                    age: age,
+                  ));
+                  // Navigator.push(context,
+                  //     MaterialPageRoute(builder: (context)=>BmiResultPage(
+                  //     result: result.roundToDouble(),
+                  //       isMale: isMale,
+                  //         age: age,
+                  //     )
+                  //     ));
               },
               child:Text('Calculate',style: TextStyle(
                 color: Colors.white,
