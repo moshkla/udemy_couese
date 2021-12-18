@@ -42,6 +42,7 @@ Widget defaultFormField({
       onFieldSubmitted: onSubmit,
       validator: validate,
       onTap: onTap,
+      onChanged: onChange,
       decoration: InputDecoration(
         labelText: label,
         prefixIcon: Icon(prefix),
